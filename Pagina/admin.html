@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">AutoProTech S.A.S.<br><span>Automatización empresarial</span></div>
+   <nav>
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="admin.html" class="active">Admin</a>
+</nav>
+
+  </header>
+
+  <main class="admin-login">
+    <div class="login-card">
+      <div class="lock-icon">🔒</div>
+      <h2>Panel de Administración</h2>
+      <p>Ingresa tus credenciales para acceder al sistema</p>
+
+      <label>Usuario</label>
+      
+      <input type="text" id="admin-user" placeholder="Ingresa tu usuario">
+
+      <label>Contraseña</label>
+      <div class="password-container">
+  <input type="password" id="admin-pass" placeholder="Ingresa tu contraseña">
+  <button type="button" id="toggle-pass" class="toggle-btn">👁️</button>
+</div>
+     
+
+    <button onclick="if(validarLogin()) loginAdmin()">Ingresar</button>
+
+      <div class="test-credentials">
+        <strong>Credenciales de prueba:</strong><br>
+        <span><b>Usuario:</b> admin</span><br>
+        <span><b>Contraseña:</b> admin123</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

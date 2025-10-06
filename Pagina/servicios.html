@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Servicios - AutoProTech</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">AutoProTech S.A.S.<br><span>Automatización empresarial</span></div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html" class="active">Servicios</a>
+      
+      <button class="logout-btn" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </nav>
+  </header>
+
+  <main class="servicios-page">
+    <section class="services-hero">
+      <h1>Nuestros Servicios</h1>
+      <p>Descubre nuestra amplia gama de servicios profesionales diseñados para impulsar el crecimiento de tu negocio</p>
+    </section>
+
+    <div class="servicios-toolbar">
+      <input type="text" id="svc-search" placeholder="Buscar por nombre o categoría..." />
+      <select id="svc-filter">
+        <option value="todos" selected>Todos</option>
+        <option value="promo">En promoción</option>
+        <option value="disponible">Disponibles</option>
+        <option value="sin_stock">Sin stock</option>
+      </select>
+      <select id="svc-sort">
+        <option value="nombre_asc" selected>Nombre (A–Z)</option>
+        <option value="precio_asc">Precio (menor a mayor)</option>
+        <option value="precio_desc">Precio (mayor a menor)</option>
+        <option value="stock_desc">Stock (mayor a menor)</option>
+      </select>
+    </div>
+
+    <section id="services-grid" class="services-grid"></section>
+    <p id="empty-state" class="empty-state" style="display:none;">No hay servicios para mostrar.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

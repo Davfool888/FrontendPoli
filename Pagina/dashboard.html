@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Admin - AutoProTech</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">AutoProTech S.A.S.<br><span>Automatización empresarial</span></div>
+    <nav>
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="dashboard.html" class="active">Panel Admin</a>
+  <button class="logout-btn" onclick="cerrarSesion()">Cerrar Sesión</button>
+</nav>
+
+  </header>
+
+  <main class="dashboard">
+    <h1>Panel de Administración</h1>
+    <p>Gestiona los servicios de la empresa</p>
+
+    <div class="summary-cards">
+      <div class="card"><h3>Total Servicios</h3><p id="total-servicios">0</p></div>
+      <div class="card"><h3>En Promoción</h3><p id="promo-servicios">0</p></div>
+      <div class="card"><h3>Stock Total</h3><p id="stock-total">0</p></div>
+      <div class="card"><h3>Sin Stock</h3><p id="sin-stock">0</p></div>
+    </div>
+
+    <button class="add-btn" id="toggle-form">+ Agregar Nuevo Servicio</button>
+
+    <!-- Formulario (toggle) -->
+    <form class="service-form" id="service-form" style="display:none;">
+      <div class="grid">
+        <label>Nombre<input type="text" id="svc-name" placeholder="Nombre del servicio"></label>
+        <label>Categoría<input type="text" id="svc-category" placeholder="Categoría"></label>
+        <label>Precio (número)<input type="number" id="svc-price" placeholder="2500"></label>
+        <label>Stock<input type="number" id="svc-stock" placeholder="10"></label>
+        <label>URL de imagen<input type="text" id="svc-image" placeholder="https://..."></label>
+        <label class="check"><input type="checkbox" id="svc-promo"> En promoción</label>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn-primary" id="save-service">Guardar</button>
+        <button type="button" class="btn-secondary" id="cancel-edit">Cancelar</button>
+      </div>
+    </form>
+
+    <section class="tabla-servicios">
+      <h2>Servicios Registrados</h2>
+      <p>Gestiona todos los servicios de la empresa</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="servicio-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

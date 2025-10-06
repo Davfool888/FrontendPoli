@@ -1,0 +1,202 @@
+/* === BASE === */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #111;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.logo { font-weight: 700; font-size: 1.1rem; line-height: 1.2; }
+.logo span { font-weight: 400; font-size: 0.8rem; color: #555; }
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+}
+nav a.active { background: #000; color: #fff; }
+nav a:hover { background: #eee; }
+.logout-btn {
+  margin-left: 1rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* === SLIDER (Landing) === */
+.slider {
+  position: relative;
+  height: 350px;
+  background: #000;
+  color: #fff;
+  display: flex; justify-content: center; align-items: center;
+  text-align: center; overflow: hidden;
+}
+.slide { position: absolute; opacity: 0; transition: opacity 1s ease-in-out; }
+.slide.active { opacity: 1; position: relative; }
+.slide h2 { font-size: 2.6rem; margin: 0; }
+.slide p { margin: 0.5rem 0 1rem; }
+.btn { background: #fff; color: #000; padding: 0.5rem 1rem; text-decoration: none; border-radius: 6px; font-weight: 600; }
+.dots { position: absolute; bottom: 12px; width: 100%; text-align: center; }
+.dot { height: 12px; width: 12px; margin: 0 5px; background: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; }
+.dot.active { background: #fff; }
+
+/* === ABOUT (Landing) === */
+.about { display: flex; flex-wrap: wrap; padding: 2rem; background: #fff; }
+.about .text { flex: 1; padding-right: 2rem; min-width: 300px; }
+.about .image { flex: 1; text-align: center; min-width: 300px; }
+.about img { max-width: 100%; border-radius: 10px; }
+
+/* === LOGIN ADMIN === */
+.admin-login {
+  display: flex; justify-content: center; align-items: center;
+  height: calc(100vh - 80px); background: #f6f7fb;
+}
+.login-card {
+  background: #fff; padding: 2rem; border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center; width: 100%; max-width: 420px;
+}
+.lock-icon {
+  font-size: 1.9rem; background: #000; color: #fff; width: 52px; height: 52px;
+  margin: 0 auto 1rem; border-radius: 50%; display:flex; justify-content:center; align-items:center;
+}
+.login-card h2 { margin-bottom: .4rem; }
+.login-card p { margin-bottom: 1.4rem; color: #555; }
+.login-card label { display:block; text-align:left; margin-bottom: .35rem; font-weight: 600; margin-top: 1rem; }
+.login-card input {
+  width: 100%; padding: .7rem; border-radius: 10px; border: 1px solid #ddd; background:#f7f7f9; font-size: 1rem;
+}
+.login-card button {
+  margin-top: 1.2rem; width: 100%; padding: .85rem; background:#000; color:#fff; border:none; border-radius: 10px; font-weight: 700; cursor:pointer;
+}
+.test-credentials {
+  background: #eef0f6; margin-top: 1.2rem; padding: 1rem; font-size: .9rem; border-radius: 10px; text-align:left;
+}
+
+/* === DASHBOARD === */
+.dashboard { padding: 2rem; }
+.summary-cards { display:flex; gap:1rem; margin:1rem 0 2rem; flex-wrap: wrap; }
+.card {
+  flex:1; min-width:200px; background:#fff; padding:1.2rem; border-radius:12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align:center;
+}
+.add-btn {
+  background:#000; color:#fff; border:none; padding:.8rem 1rem; border-radius:10px; font-weight:700; margin-bottom:1rem; cursor:pointer;
+}
+.tabla-servicios {
+  background:#fff; padding:1rem; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+.tabla-servicios table { width:100%; border-collapse: collapse; margin-top:.5rem; }
+.tabla-servicios th, .tabla-servicios td { padding:.8rem; text-align:left; border-bottom:1px solid #eee; }
+.tabla-servicios img { width: 56px; height:56px; object-fit:cover; border-radius: 8px; }
+
+/* Badges */
+.estado { display:inline-block; padding:.25rem .6rem; font-size:.75rem; border-radius: 999px; color:#fff; margin-right:.25rem; }
+.promocion { background:#e11d48; }
+.disponible { background:#111; }
+
+/* Acciones */
+.acciones button {
+  background:none; border:none; cursor:pointer; font-size:1rem; margin-right:.4rem;
+}
+
+/* Formulario de servicio */
+.service-form {
+  background:#fff; border-radius:12px; padding:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.06); margin-bottom:1rem;
+}
+.service-form .grid {
+  display:grid; grid-template-columns: repeat(3, minmax(200px,1fr)); gap:1rem;
+}
+.service-form label { font-weight:600; font-size:.9rem; }
+.service-form input[type="text"],
+.service-form input[type="number"] {
+  width:100%; padding:.6rem; border-radius:8px; border:1px solid #ddd; background:#fafafa;
+}
+.service-form .check { display:flex; align-items:center; gap:.5rem; margin-top:1.8rem; }
+.form-actions { margin-top:1rem; display:flex; gap:.6rem; }
+.btn-primary { background:#111; color:#fff; border:none; padding:.6rem .9rem; border-radius:8px; font-weight:700; cursor:pointer; }
+.btn-secondary { background:#eee; color:#111; border:none; padding:.6rem .9rem; border-radius:8px; cursor:pointer; }
+
+@media (max-width: 900px) {
+  .service-form .grid { grid-template-columns: 1fr; }
+}
+
+/* === HERO SERVICIOS === */
+.services-hero { text-align:center; padding: 1.5rem 1rem .5rem; }
+.services-hero h1 { font-size: 2rem; margin:.2rem 0; }
+.services-hero p { color:#6b7280; max-width: 760px; margin:.3rem auto 0; }
+
+/* === GRID SERVICIOS (estilo tarjeta premium) === */
+.services-grid {
+  display:grid; gap: 1rem;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  padding-bottom: 2rem;
+}
+@media (max-width: 1280px){ .services-grid{ grid-template-columns: repeat(3,1fr);} }
+@media (max-width: 900px){ .services-grid{ grid-template-columns: repeat(2,1fr);} }
+@media (max-width: 600px){ .services-grid{ grid-template-columns: 1fr;} }
+
+.service-card {
+  background:#fff; border-radius:14px; overflow:hidden;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  display:flex; flex-direction:column;
+}
+
+.service-card .image-wrap{
+  position:relative; width:100%; height:170px; overflow:hidden;
+}
+.service-card img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* Cinta de Promoción */
+.ribbon {
+  position:absolute; top:10px; right:10px;
+  background:#e11d48; color:#fff; font-weight:700; font-size:.8rem;
+  padding:.25rem .5rem; border-radius:999px;
+}
+
+/* Encabezado con título y stock a la derecha */
+.card-body { padding: .9rem 1rem 1.1rem; display:flex; flex-direction:column; gap:.45rem; }
+.card-head { display:flex; justify-content:space-between; align-items:center; gap:.5rem; }
+.card-title {
+  font-size:1rem; font-weight:700; margin:0; max-width: 75%;
+  display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden;
+}
+.stock { font-size:.85rem; color:#6b7280; }
+
+/* Descripción truncada a 2 líneas */
+.card-desc {
+  color:#4b5563; font-size:.92rem;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+
+/* Precio + botón */
+.card-foot { display:flex; justify-content:space-between; align-items:center; margin-top:.25rem; }
+.price { font-weight:800; font-size:1rem; }
+.btn-detail {
+  background:#0f172a; color:#fff; border:none; border-radius:10px;
+  padding:.5rem .8rem; cursor:pointer; font-weight:700;
+}
+.btn-detail:hover{ filter:brightness(1.05); }
+
+/* Badge de estado (reusamos estilos existentes) */
+.badges { margin-top:.1rem; }
+
+
+
